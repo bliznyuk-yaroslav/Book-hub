@@ -27,7 +27,7 @@ export class BooksService {
     const limit = Math.min(50, Math.max(1, params.limit ?? 10));
     const skip = (page - 1) * limit;
 
-    const where: Prisma.BookWhereInput = params.q
+    const where: any = params.q
       ? {
           OR: [
             { name: { contains: params.q, mode: 'insensitive' as const } },
